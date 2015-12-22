@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Android.Content;
 using Java.Lang;
 using Xamarin.ShortcutBadger.Infrastructure;
@@ -16,6 +17,11 @@ namespace Xamarin.ShortcutBadger.Implementations
 		public SamsungHomeBadger(Context context)
 			: base(context)
 		{
+		}
+
+		public override IEnumerable<string> SupportLaunchers
+		{
+			get { return new List<string>(); }
 		}
 	}
 }
