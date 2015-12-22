@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Android.Content;
 using Java.Lang;
 using Java.Lang.Reflect;
-using ShortcutBadger.Infrastructure;
+using Xamarin.ShortcutBadger.Infrastructure;
 
-namespace ShortcutBadger.Implementations
+namespace Xamarin.ShortcutBadger.Implementations
 {
 	/**
 	 * @author leolin

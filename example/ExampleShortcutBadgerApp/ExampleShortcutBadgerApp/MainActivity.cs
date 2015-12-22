@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Xamarin.ShortcutBadger;
 
 namespace ExampleShortcutBadgerApp
 {
@@ -20,7 +21,7 @@ namespace ExampleShortcutBadgerApp
 			{
 				var count = int.Parse(editText.Text);
 
-				ShortcutBadger.ShortcutBadger.SetBadge(this, count);
+				ShortcutBadger.SetBadge(this, count);
 			};
 		}
 	}

@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("ShortcutBadger.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Xamarin.ShortcutBadger.Resource", IsApplication=false)]
 
-namespace ShortcutBadger
+namespace Xamarin.ShortcutBadger
 {
 	
 	

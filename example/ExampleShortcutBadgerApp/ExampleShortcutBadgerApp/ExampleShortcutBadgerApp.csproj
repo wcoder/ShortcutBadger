@@ -70,9 +70,9 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\ShortcutBadger.csproj">
+    <ProjectReference Include="..\..\..\src\Xamarin.ShortcutBadger.csproj">
       <Project>{49dd0737-ed88-4548-b0af-d6a31ccbb2ec}</Project>
-      <Name>ShortcutBadger</Name>
+      <Name>Xamarin.ShortcutBadger</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

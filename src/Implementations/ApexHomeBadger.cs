@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using Android.Content;
-using ShortcutBadger.Infrastructure;
+using Xamarin.ShortcutBadger.Infrastructure;
 
-namespace ShortcutBadger.Implementations
+namespace Xamarin.ShortcutBadger.Implementations
 {
 	/**
 	 * @author Gernot Pansy

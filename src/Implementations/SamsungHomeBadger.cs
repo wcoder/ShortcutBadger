@@ -1,8 +1,8 @@
 using Android.Content;
 using Java.Lang;
-using ShortcutBadger.Infrastructure;
+using Xamarin.ShortcutBadger.Infrastructure;
 
-namespace ShortcutBadger.Implementations
+namespace Xamarin.ShortcutBadger.Implementations
 {
 
 	/**

@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleShortcutBadgerApp", "ExampleShortcutBadgerApp\ExampleShortcutBadgerApp.csproj", "{4EC74AAB-4146-4B8B-A384-AB11E52543C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutBadger", "..\..\src\ShortcutBadger.csproj", "{49DD0737-ED88-4548-B0AF-D6A31CCBB2EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.ShortcutBadger", "..\..\src\Xamarin.ShortcutBadger.csproj", "{49DD0737-ED88-4548-B0AF-D6A31CCBB2EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
