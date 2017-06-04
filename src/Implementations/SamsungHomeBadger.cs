@@ -23,10 +23,10 @@ namespace Xamarin.ShortcutBadger.Implementations
 
 		public SamsungHomeBadger()
 		{
-			//if (Build.VERSION.SdkInt >= BuildVersionCodes.)
-			//{
-			//	_defaultBadger = new DefaultBadger();
-			//}
+			if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+			{
+				_defaultBadger = new DefaultBadger();
+			}
 		}
 
 		public void ExecuteBadge(Context context, ComponentName componentName, int badgeCount)
