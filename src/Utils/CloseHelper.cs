@@ -1,4 +1,5 @@
 ﻿using Android.Database;
+using Java.IO;
 
 namespace Xamarin.ShortcutBadger.Utils
 {
@@ -19,19 +20,16 @@ namespace Xamarin.ShortcutBadger.Utils
 		}
 
 
-		//public static void CloseQuietly(Closeable closeable)
-		//{
-		//	try
-		//	{
-		//		if (closeable != null)
-		//		{
-		//			closeable.close();
-		//		}
-		//	}
-		//	catch (IOException var2)
-		//	{
+		public static void CloseQuietly(ICloseable closeable)
+		{
+			try
+			{
+				closeable?.Close();
+			}
+			catch (IOException)
+			{
 
-		//	}
-		//}
+			}
+		}
 	}
 }
