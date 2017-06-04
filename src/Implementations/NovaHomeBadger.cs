@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Android.Content;
 using Xamarin.ShortcutBadger.Infrastructure;
+using Uri = Android.Net.Uri;
 
 namespace Xamarin.ShortcutBadger.Implementations
 {
@@ -11,47 +11,25 @@ namespace Xamarin.ShortcutBadger.Implementations
 	 * User: Gernot Pansy
 	 * Date: 2014/11/03
 	 * Time: 7:15
+	 * https://github.com/leolin310148/ShortcutBadger/blob/master/ShortcutBadger/src/main/java/me/leolin/shortcutbadger/impl/NovaHomeBadger.java
 	 */
-	internal class NovaHomeBadger : BaseShortcutBadger
+	internal class NovaHomeBadger : IShortcutBadger
 	{
-		const string ContentUri = "content://com.teslacoilsw.notifier/unread_count";
-		const string Count = "count";
-		const string Tag = "tag";
-		const string IntentTagValueFormat = "{0}/{1}";
-
-		public NovaHomeBadger(Context context)
-			: base(context)
-		{
-		}
+		private const string ContentUri = "content://com.teslacoilsw.notifier/unread_count";
+		private const string Count = "count";
+		private const string Tag = "tag";
 
 		#region IShortcutBadger implementation
 
-		public override void ExecuteBadge(int badgeCount)
+		public void ExecuteBadge(Context context, ComponentName componentName, int badgeCount)
 		{
-			try
-			{
-				ContentValues contentValues = new ContentValues();
-				contentValues.Put(Tag, string.Format(IntentTagValueFormat, ContextPackageName, EntryActivityName));
-				contentValues.Put(Count, badgeCount);
-				_context.ContentResolver.Insert(Android.Net.Uri.Parse(ContentUri), contentValues);
-			}
-			catch (Java.Lang.IllegalArgumentException)
-			{
-				/* Fine, TeslaUnread is not installed. */
-			}
-			catch (Exception ex)
-			{
-				/* Some other error, possibly because the format
-				of the ContentValues are incorrect. */
-
-				throw new ShortcutBadgeException(ex.Message);
-			}
+			var contentValues = new ContentValues();
+			contentValues.Put(Tag, $"{componentName.PackageName}/{componentName.ClassName}");
+			contentValues.Put(Count, badgeCount);
+			context.ContentResolver.Insert(Uri.Parse(ContentUri), contentValues);
 		}
 
-		public override IEnumerable<string> SupportLaunchers
-		{
-			get { return new[] { "com.teslacoilsw.launcher" }; }
-		}
+		public IEnumerable<string> SupportLaunchers => new[] { "com.teslacoilsw.launcher" };
 
 		#endregion
 	}

@@ -26,7 +26,6 @@ namespace Xamarin.ShortcutBadger
 			typeof(NewHtcHomeBadger),
 			typeof(NovaHomeBadger),
 			typeof(SamsungHomeBadger),
-			typeof(SolidHomeBadger),
 			typeof(SonyHomeBadger),
 			typeof(XiaomiHomeBadger)
 		};

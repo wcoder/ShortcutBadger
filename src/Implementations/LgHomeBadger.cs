@@ -1,47 +1,47 @@
+using System;
 using System.Collections.Generic;
 using Android.Content;
 using Xamarin.ShortcutBadger.Infrastructure;
+using Xamarin.ShortcutBadger.Utils;
 
 namespace Xamarin.ShortcutBadger.Implementations
 {
 	/**
 	 * @author Leo Lin
-	 * Deprecated, LG devices will use DefaultBadger
+	 * https://github.com/leolin310148/ShortcutBadger/blob/master/ShortcutBadger/src/main/java/me/leolin/shortcutbadger/impl/LGHomeBadger.java
 	 */
-	internal class LgHomeBadger : BaseShortcutBadger
+	[Obsolete("Deprecated, LG devices will use DefaultBadger")]
+	internal class LgHomeBadger : IShortcutBadger
 	{
-		const string IntentAction = "android.intent.action.BADGE_COUNT_UPDATE";
-		const string IntentExtraBadgeCount = "badge_count";
-		const string IntentExtraPackagename = "badge_count_package_name";
-		const string IntentExtraActivityName = "badge_count_class_name";
-
-		public LgHomeBadger(Context context)
-			: base(context)
-		{
-		}
+		private const string IntentAction = "android.intent.action.BADGE_COUNT_UPDATE";
+		private const string IntentExtraBadgeCount = "badge_count";
+		private const string IntentExtraPackageName = "badge_count_package_name";
+		private const string IntentExtraActivityName = "badge_count_class_name";
 
 		#region IShortcutBadger implementation
 
-		public override void ExecuteBadge(int badgeCount)
+		public void ExecuteBadge(Context context, ComponentName componentName, int badgeCount)
 		{
 			var intent = new Intent(IntentAction);
 			intent.PutExtra(IntentExtraBadgeCount, badgeCount);
-			intent.PutExtra(IntentExtraPackagename, ContextPackageName);
-			intent.PutExtra(IntentExtraActivityName, EntryActivityName);
-			_context.SendBroadcast(intent);
-		}
+			intent.PutExtra(IntentExtraPackageName, componentName.PackageName);
+			intent.PutExtra(IntentExtraActivityName, componentName.ClassName);
 
-		public override IEnumerable<string> SupportLaunchers
-		{
-			get
+			if (BroadcastHelper.CanResolveBroadcast(context, intent))
 			{
-				return new[]
-				{
-					"com.lge.launcher",
-					"com.lge.launcher2"
-				};
+				context.SendBroadcast(intent);
+			}
+			else
+			{
+				throw new ShortcutBadgeException("unable to resolve intent: " + intent);
 			}
 		}
+
+		public IEnumerable<string> SupportLaunchers => new[]
+		{
+			"com.lge.launcher",
+			"com.lge.launcher2"
+		};
 
 		#endregion
 	}

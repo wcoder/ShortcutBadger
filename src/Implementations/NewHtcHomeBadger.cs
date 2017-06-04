@@ -1,46 +1,48 @@
 using System.Collections.Generic;
 using Android.Content;
 using Xamarin.ShortcutBadger.Infrastructure;
+using Xamarin.ShortcutBadger.Utils;
 
 namespace Xamarin.ShortcutBadger.Implementations
 {
 	/**
 	 * @author Leo Lin
+	 * https://github.com/leolin310148/ShortcutBadger/blob/master/ShortcutBadger/src/main/java/me/leolin/shortcutbadger/impl/NewHtcHomeBadger.java
 	 */
-	internal class NewHtcHomeBadger : BaseShortcutBadger
+	internal class NewHtcHomeBadger : IShortcutBadger
 	{
-		const string IntentUpdateShortcut = "com.htc.launcher.action.UPDATE_SHORTCUT";
-		const string IntentSetNotification = "com.htc.launcher.action.SET_NOTIFICATION";
-		const string Packagename = "packagename";
-		const string Count = "count";
-		const string ExtraComponent = "com.htc.launcher.extra.COMPONENT";
-		const string ExtraCount = "com.htc.launcher.extra.Count";
-
-		public NewHtcHomeBadger(Context context)
-			: base(context)
-		{
-		}
+		private const string IntentUpdateShortcut = "com.htc.launcher.action.UPDATE_SHORTCUT";
+		private const string IntentSetNotification = "com.htc.launcher.action.SET_NOTIFICATION";
+		private const string PackageName = "packagename";
+		private const string Count = "count";
+		private const string ExtraComponent = "com.htc.launcher.extra.COMPONENT";
+		private const string ExtraCount = "com.htc.launcher.extra.Count";
 
 		#region IShortcutBadger implementation
 
-		public override void ExecuteBadge(int badgeCount)
+		public void ExecuteBadge(Context context, ComponentName componentName, int badgeCount)
 		{
 			var intent1 = new Intent(IntentSetNotification);
-			var localComponentName = new ComponentName(ContextPackageName, EntryActivityName);
-			intent1.PutExtra(ExtraComponent, localComponentName.FlattenToShortString());
+			intent1.PutExtra(ExtraComponent, componentName.FlattenToShortString());
 			intent1.PutExtra(ExtraCount, badgeCount);
-			_context.SendBroadcast(intent1);
 
 			var intent = new Intent(IntentUpdateShortcut);
-			intent.PutExtra(Packagename, ContextPackageName);
+			intent.PutExtra(PackageName, componentName.PackageName);
 			intent.PutExtra(Count, badgeCount);
-			_context.SendBroadcast(intent);
+
+			if (BroadcastHelper.CanResolveBroadcast(context, intent1)
+				|| BroadcastHelper.CanResolveBroadcast(context, intent))
+			{
+				context.SendBroadcast(intent1);
+				context.SendBroadcast(intent);
+			}
+			else
+			{
+				throw new ShortcutBadgeException("unable to resolve intent: " + intent);
+			}
 		}
 
-		public override IEnumerable<string> SupportLaunchers
-		{
-			get { return new[] { "com.htc.launcher" }; }
-		}
+		public IEnumerable<string> SupportLaunchers => new[] { "com.htc.launcher" };
 
 		#endregion
 	}
