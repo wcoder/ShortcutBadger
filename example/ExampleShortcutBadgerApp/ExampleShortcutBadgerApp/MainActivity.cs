@@ -21,7 +21,7 @@ namespace ExampleShortcutBadgerApp
 			{
 				var count = int.Parse(editText.Text);
 
-				ShortcutBadger.SetBadge(this, count);
+				ShortcutBadger.ApplyCount(this, count);
 			};
 		}
 	}
