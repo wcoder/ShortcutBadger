@@ -1,4 +1,4 @@
-# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.17-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/ShortcutBadger.svg?label=NuGet)](https://www.nuget.org/packages/ShortcutBadger/)
+# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.17-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/Xamarin.ShortcutBadger.svg?label=NuGet)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/)
 
 Port of [ShortcutBadger](https://github.com/leolin310148/ShortcutBadger) for Xamarin.Android
 
@@ -6,7 +6,29 @@ Port of [ShortcutBadger](https://github.com/leolin310148/ShortcutBadger) for Xam
 
 The ShortcutBadger makes your Android App show the count of unread messages as a badge on your App shortcut!
 
-# Supported launchers:<br/>
+## Usage
+
+NuGet
+
+```
+Install-Package Xamarin.ShortcutBadger
+```
+
+Add the codes below:
+```csharp
+int badgeCount = 1;
+ShortcutBadger.ApplyCount(context, badgeCount);
+```
+If you want to remove the badge:
+```csharp
+ShortcutBadger.RemoveCount(context);
+```
+or
+```csharp
+ShortcutBadger.ApplyCount(context, 0);
+```
+
+## Supported launchers:<br/>
 
 <table>
     <tr>
@@ -107,27 +129,6 @@ Xiaomi devices required extra setup with notifications, please read [wiki](https
 ## IsBadgeWorking?
 
 A tool for to checking your device / launcher / android version and test/report if Shortcutbadger is working or not
-
-## Usage
-
-Add the codes below:
-
-```csharp
-int badgeCount = 1;
-ShortcutBadger.ApplyCount(context, badgeCount); //for 1.1.4+
-ShortcutBadger.With(ApplicationContext).Count(badgeCount); //for 1.1.3
-```
-
-If you want to remove the badge:
-```csharp
-ShortcutBadger.RemoveCount(context); //for 1.1.4+
-ShortcutBadger.With(ApplicationContext).Remove();  //for 1.1.3
-```
-or
-```csharp
-ShortcutBadger.ApplyCount(context, 0); //for 1.1.4+
-ShortcutBadger.With(ApplicationContext).Count(0); //for 1.1.3
-```
 
 LICENSE
 ===================================
