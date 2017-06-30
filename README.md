@@ -1,7 +1,8 @@
-# ShortcutBadger
-Port of https://github.com/leolin310148/ShortcutBadger to Xamarin.Android
+# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.17-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/ShortcutBadger.svg?label=NuGet)](https://www.nuget.org/packages/ShortcutBadger/)
 
-v.1.1.17
+Port of [ShortcutBadger](https://github.com/leolin310148/ShortcutBadger) for Xamarin.Android
+
+---
 
 The ShortcutBadger makes your Android App show the count of unread messages as a badge on your App shortcut!
 
@@ -107,5 +108,40 @@ Xiaomi devices required extra setup with notifications, please read [wiki](https
 
 A tool for to checking your device / launcher / android version and test/report if Shortcutbadger is working or not
 
----
-2015-2017 Yauheni Pakala
+## Usage
+
+Add the codes below:
+
+```csharp
+int badgeCount = 1;
+ShortcutBadger.ApplyCount(context, badgeCount); //for 1.1.4+
+ShortcutBadger.With(ApplicationContext).Count(badgeCount); //for 1.1.3
+```
+
+If you want to remove the badge:
+```csharp
+ShortcutBadger.RemoveCount(context); //for 1.1.4+
+ShortcutBadger.With(ApplicationContext).Remove();  //for 1.1.3
+```
+or
+```csharp
+ShortcutBadger.ApplyCount(context, 0); //for 1.1.4+
+ShortcutBadger.With(ApplicationContext).Count(0); //for 1.1.3
+```
+
+LICENSE
+===================================
+
+        Copyright 2014-2017 Leo Lin, Yauheni Pakala
+
+        Licensed under the Apache License, Version 2.0 (the "License");
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
