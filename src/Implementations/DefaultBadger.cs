@@ -35,7 +35,12 @@ namespace Xamarin.ShortcutBadger.Implementations
 			}
 		}
 		
-		public IEnumerable<string> SupportLaunchers => new List<string>();
+		public IEnumerable<string> SupportLaunchers => new List<string>
+		{
+			"fr.neamar.kiss",
+			"com.quaap.launchtime",
+			"com.quaap.launchtime_official"
+		};
 
 		#endregion
 
