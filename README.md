@@ -1,4 +1,4 @@
-# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.17-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.ShortcutBadger)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/)
+# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.19-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.ShortcutBadger)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/)
 
 Port of [ShortcutBadger](https://github.com/leolin310148/ShortcutBadger) for Xamarin.Android
 
@@ -93,7 +93,7 @@ ShortcutBadger.ApplyCount(context, 0);
         <td width="130">
             <h3>ZUK</h3>
             <br>
-            <img src="https://raw.github.com/linwoain/ShortcutBadger/master/screenshots/ss_zuk.png"/>
+            <img src="https://raw.github.com/leolin310148/ShortcutBadger/master/screenshots/ss_zuk.png"/>
             <br>
             (1.1.10+)
         </td>
@@ -102,7 +102,7 @@ ShortcutBadger.ApplyCount(context, 0);
             <br>
             (Not Fully Support)
             <br>
-            <img src="https://raw.github.com/leolin310148/ShortcutBadger/master/screenshots/ss_oppo.png?raw=true"/>
+            <img src="https://raw.githubusercontent.com/leolin310148/ShortcutBadger/master/screenshots/ss_oppo.png"/>
             <br>
             (1.1.10+)
         </td>
@@ -120,15 +120,66 @@ ShortcutBadger.ApplyCount(context, 0);
             <br>
             (1.1.17+)
         </td>
+        <td width="260" colspan="2">
+            <h3>KISS</h3>
+            <br>
+            <img src="https://raw.github.com/leolin310148/ShortcutBadger/master/screenshots/ss_kiss.png"/>
+            <br>
+            (1.1.18+)
+        </td>
+    </tr>
+    <tr>
+        <td width="130">
+            <h3>LaunchTime</h3>
+            <br>
+            <img src="https://raw.github.com/leolin310148/ShortcutBadger/master/screenshots/ss_launchtime.png"/>
+        </td>
     </tr>
 </table>
 
+* Nova launcher with TeslaUnread, Apex launcher, ADW Launcher provided by [notz](https://github.com/notz)
+* Solid launcher provided by [MajeurAndroid](https://github.com/MajeurAndroid)
+* KISS Launcher provided by [alexander255](https://github.com/alexander255)
+
 ## About Xiaomi devices
-Xiaomi devices required extra setup with notifications, please read [wiki](https://github.com/leolin310148/ShortcutBadger/wiki/Xiaomi-Device-Support)
+Xiaomi devices require extra setup with notifications, please read [wiki](https://github.com/leolin310148/ShortcutBadger/wiki/Xiaomi-Device-Support).
 
 ## IsBadgeWorking?
 
-A tool for to checking your device / launcher / android version and test/report if Shortcutbadger is working or not
+A tool for displaying your device, launcher & android version and testing whether ShortcutBadger
+works or not may be downloaded from
+
+* Google Play [https://play.google.com/store/apps/details?id=me.leolin.isbadgeworking](https://play.google.com/store/apps/details?id=me.leolin.isbadgeworking)
+* The GitHub repository [https://github.com/leolin310148/IsBadgeWorking.Android/releases](https://github.com/leolin310148/IsBadgeWorking.Android/releases)
+
+## DEVELOP BY
+[Leo Lin](https://github.com/leolin310148) - leolin310148@gmail.com
+
+## ABOUT Google Play Developer Term Violations
+If you receive a message from Google containing something like this:<br/>
+
+	REASON FOR WARNING: Violation of section 4.4 of the Developer Distribution Agreement.
+
+please use version 1.1.0+!
+
+
+## CHANGE LOG
+
+1.1.19:
+
+* Fix multiple home package resolve issue.
+
+1.1.18:
+
+* Add Kill Launcher Support
+
+1.1.17:
+
+* Add ZTE Support
+
+1.1.16:
+
+* Improve Sony Launcher support.
 
 LICENSE
 ===================================
