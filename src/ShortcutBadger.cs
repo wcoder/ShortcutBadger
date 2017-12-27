@@ -29,20 +29,18 @@ namespace Xamarin.ShortcutBadger
 		{
 			typeof(AdwHomeBadger),
 			typeof(ApexHomeBadger),
-			typeof(AsusHomeLauncher),
 			typeof(DefaultBadger),
-			typeof(EverythingMeHomeBadger),
-			typeof(HuaweiHomeBadger),
-			typeof(LgHomeBadger),
 			typeof(NewHtcHomeBadger),
 			typeof(NovaHomeBadger),
+			typeof(SonyHomeBadger),
+			typeof(AsusHomeLauncher),
+			typeof(HuaweiHomeBadger),
 			typeof(OPPOHomeBader),
 			typeof(SamsungHomeBadger),
-			typeof(SonyHomeBadger),
+			typeof(ZukHomeBadger),
 			typeof(VivoHomeBadger),
-			typeof(XiaomiHomeBadger),
 			typeof(ZTEHomeBadger),
-			typeof(ZukHomeBadger)
+			typeof(EverythingMeHomeBadger),
 		};
 
 
@@ -220,29 +218,30 @@ namespace Xamarin.ShortcutBadger
 
 			var intent = new Intent(Intent.ActionMain);
 			intent.AddCategory(Intent.CategoryHome);
-			var resolveInfo = context.PackageManager.ResolveActivity(intent, PackageInfoFlags.MatchDefaultOnly);
 
-			if (resolveInfo == null || resolveInfo.ActivityInfo.Name.ToLower().Contains("resolver"))
-				return false;
+			var resolveInfos = context.PackageManager.QueryIntentActivities(intent, PackageInfoFlags.MatchDefaultOnly);
 
-			var currentHomePackage = resolveInfo.ActivityInfo.PackageName;
-
-			foreach (var badger in Badgers)
+			foreach (var resolveInfo in resolveInfos)
 			{
-				IShortcutBadger shortcutBadger = null;
-				try
-				{
-					shortcutBadger = (IShortcutBadger)Activator.CreateInstance(badger);
-				}
-				catch (Exception)
-				{
-					// ignored
-				}
+				var currentHomePackage = resolveInfo.ActivityInfo.PackageName;
 
-				if (shortcutBadger != null && shortcutBadger.SupportLaunchers.Contains(currentHomePackage))
+				foreach (var badger in Badgers)
 				{
-					_sShortcutBadger = shortcutBadger;
-					break;
+					IShortcutBadger shortcutBadger = null;
+					try
+					{
+						shortcutBadger = (IShortcutBadger)Activator.CreateInstance(badger);
+					}
+					catch (Exception)
+					{
+						// ignored
+					}
+
+					if (shortcutBadger != null && shortcutBadger.SupportLaunchers.Contains(currentHomePackage))
+					{
+						_sShortcutBadger = shortcutBadger;
+						break;
+					}
 				}
 			}
 
