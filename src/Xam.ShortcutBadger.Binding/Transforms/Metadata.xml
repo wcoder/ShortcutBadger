@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    
+    <remove-node path="/api/package[@name='me.leolin.shortcutbadger.impl']" />
+
+    <remove-node path="/api/package[@name='me.leolin.shortcutbadger']/class[@name='BuildConfig']" />
+    <remove-node path="/api/package[@name='me.leolin.shortcutbadger.util']/class[@name='CloseHelper']" />
+    <remove-node path="/api/package[@name='me.leolin.shortcutbadger.util']/class[@name='BroadcastHelper']" />
+
+    <attr path="/api/package[@name='me.leolin.shortcutbadger']" name="managedName">XamarinShortcutBadger</attr>
+
+</metadata>
