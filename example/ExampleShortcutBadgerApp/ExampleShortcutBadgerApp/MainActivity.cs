@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using Xamarin.ShortcutBadger;
+using XamarinShortcutBadger;
 
 namespace ExampleShortcutBadgerApp
 {
