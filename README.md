@@ -176,6 +176,7 @@ please use version 1.1.0+!
 1.1.21:
 
 * Using binding of native library
+* Change namespace from `Xamarin.ShortcutBadger` to `XamarinShortcutBadger`
 
 1.1.19:
 
