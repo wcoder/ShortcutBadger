@@ -5,17 +5,19 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{49DD0737-ED88-4548-B0AF-D6A31CCBB2EC}</ProjectGuid>
+    <ProjectGuid>{4EC74AAB-4146-4B8B-A384-AB11E52543C9}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Xamarin.ShortcutBadger</RootNamespace>
-    <AssemblyName>Xamarin.ShortcutBadger</AssemblyName>
+    <RootNamespace>ExampleShortcutBadgerApp</RootNamespace>
+    <AssemblyName>ExampleShortcutBadgerApp</AssemblyName>
     <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +27,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +37,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -43,42 +49,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementations\AdwHomeBadger.cs" />
-    <Compile Include="Implementations\ApexHomeBadger.cs" />
-    <Compile Include="Implementations\AsusHomeLauncher.cs" />
-    <Compile Include="Implementations\DefaultBadger.cs" />
-    <Compile Include="Implementations\EverythingMeHomeBadger.cs" />
-    <Compile Include="Implementations\HuaweiHomeBadger.cs" />
-    <Compile Include="Implementations\LgHomeBadger.cs" />
-    <Compile Include="Implementations\NewHtcHomeBadger.cs" />
-    <Compile Include="Implementations\NovaHomeBadger.cs" />
-    <Compile Include="Implementations\OPPOHomeBader.cs" />
-    <Compile Include="Implementations\SamsungHomeBadger.cs" />
-    <Compile Include="Implementations\SonyHomeBadger.cs" />
-    <Compile Include="Implementations\VivoHomeBadger.cs" />
-    <Compile Include="Implementations\XiaomiHomeBadger.cs" />
-    <Compile Include="Implementations\ZTEHomeBadger.cs" />
-    <Compile Include="Implementations\ZukHomeBadger.cs" />
-    <Compile Include="Infrastructure\IShortcutBadger.cs" />
-    <Compile Include="Infrastructure\ShortcutBadgeException.cs" />
+    <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShortcutBadger.cs" />
-    <Compile Include="Utils\BroadcastHelper.cs" />
-    <Compile Include="Utils\CloseHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Values\Strings.xml" />
+    <AndroidResource Include="Resources\layout\Main.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\XamarinShortcutBadger\XamarinShortcutBadger.csproj">
+      <Project>{77AC5D70-FC29-4192-A2ED-4325C410CBF4}</Project>
+      <Name>XamarinShortcutBadger</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+     Other similar extension points exist, see Microsoft.Common.targets.
+		<Target Name="BeforeBuild">
+		</Target>
+		<Target Name="AfterBuild">
+		</Target>
+ -->
 </Project>
