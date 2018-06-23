@@ -1,6 +1,6 @@
 <p align="center"><img src="logo/horizontalversion.png" alt="ShortcutBadger" height="130px"></p>
 
-# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.21-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.ShortcutBadger)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/)
+# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.21-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.ShortcutBadger)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/) ![VSTS build status](https://yauhenipakala.visualstudio.com/_apis/public/build/definitions/b0170656-dd62-445e-bbb7-d6a336f4a889/2/badge)
 
 Port of [ShortcutBadger](https://github.com/leolin310148/ShortcutBadger) for Xamarin.Android
 
