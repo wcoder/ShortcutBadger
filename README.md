@@ -1,6 +1,6 @@
 <p align="center"><img src="logo/horizontalversion.png" alt="ShortcutBadger" height="130px"></p>
 
-# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.19-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.ShortcutBadger)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/)
+# ShortcutBadger ![version](http://img.shields.io/badge/original-v1.1.21-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.ShortcutBadger)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/)
 
 Port of [ShortcutBadger](https://github.com/leolin310148/ShortcutBadger) for Xamarin.Android
 
@@ -17,20 +17,25 @@ Install-Package Xamarin.ShortcutBadger
 ```
 
 Add the codes below:
+
 ```csharp
 int badgeCount = 1;
 ShortcutBadger.ApplyCount(context, badgeCount);
 ```
+
 If you want to remove the badge:
+
 ```csharp
 ShortcutBadger.RemoveCount(context);
 ```
+
 or
+
 ```csharp
 ShortcutBadger.ApplyCount(context, 0);
 ```
 
-## Supported launchers:<br/>
+## Supported launchers:
 
 <table>
     <tr>
@@ -144,28 +149,34 @@ ShortcutBadger.ApplyCount(context, 0);
 * KISS Launcher provided by [alexander255](https://github.com/alexander255)
 
 ## About Xiaomi devices
+
 Xiaomi devices require extra setup with notifications, please read [wiki](https://github.com/leolin310148/ShortcutBadger/wiki/Xiaomi-Device-Support).
 
 ## IsBadgeWorking?
 
-A tool for displaying your device, launcher & android version and testing whether ShortcutBadger
-works or not may be downloaded from
+A tool for displaying your device, launcher & android version and testing whether ShortcutBadger works or not may be downloaded from
 
 * Google Play [https://play.google.com/store/apps/details?id=me.leolin.isbadgeworking](https://play.google.com/store/apps/details?id=me.leolin.isbadgeworking)
 * The GitHub repository [https://github.com/leolin310148/IsBadgeWorking.Android/releases](https://github.com/leolin310148/IsBadgeWorking.Android/releases)
 
 ## DEVELOP BY
+
 [Leo Lin](https://github.com/leolin310148) - leolin310148@gmail.com
 
 ## ABOUT Google Play Developer Term Violations
-If you receive a message from Google containing something like this:<br/>
 
-	REASON FOR WARNING: Violation of section 4.4 of the Developer Distribution Agreement.
+If you receive a message from Google containing something like this:
+
+> REASON FOR WARNING: Violation of section 4.4 of the Developer Distribution Agreement.
 
 please use version 1.1.0+!
 
-
 ## CHANGE LOG
+
+1.1.21:
+
+* Using binding of native library
+* Change namespace from `Xamarin.ShortcutBadger` to `XamarinShortcutBadger`
 
 1.1.19:
 

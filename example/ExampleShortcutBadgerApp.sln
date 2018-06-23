@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleShortcutBadgerApp", "ExampleShortcutBadgerApp\ExampleShortcutBadgerApp.csproj", "{4EC74AAB-4146-4B8B-A384-AB11E52543C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.ShortcutBadger", "..\..\src\Xamarin.ShortcutBadger.csproj", "{49DD0737-ED88-4548-B0AF-D6A31CCBB2EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinShortcutBadger", "..\src\XamarinShortcutBadger\XamarinShortcutBadger.csproj", "{77AC5D70-FC29-4192-A2ED-4325C410CBF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,10 @@ Global
 		{4EC74AAB-4146-4B8B-A384-AB11E52543C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EC74AAB-4146-4B8B-A384-AB11E52543C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4EC74AAB-4146-4B8B-A384-AB11E52543C9}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{49DD0737-ED88-4548-B0AF-D6A31CCBB2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49DD0737-ED88-4548-B0AF-D6A31CCBB2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49DD0737-ED88-4548-B0AF-D6A31CCBB2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49DD0737-ED88-4548-B0AF-D6A31CCBB2EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77AC5D70-FC29-4192-A2ED-4325C410CBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77AC5D70-FC29-4192-A2ED-4325C410CBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77AC5D70-FC29-4192-A2ED-4325C410CBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77AC5D70-FC29-4192-A2ED-4325C410CBF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

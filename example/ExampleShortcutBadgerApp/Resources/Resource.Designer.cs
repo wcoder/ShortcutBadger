@@ -26,8 +26,6 @@ namespace ExampleShortcutBadgerApp
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.ShortcutBadger.Resource.String.ApplicationName = global::ExampleShortcutBadgerApp.Resource.String.ApplicationName;
-			global::Xamarin.ShortcutBadger.Resource.String.Hello = global::ExampleShortcutBadgerApp.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
