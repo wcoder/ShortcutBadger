@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: macOS-latest
 
     steps:
@@ -28,7 +29,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: artifact
+        name: build-artifact
         path: Xamarin.ShortcutBadger.*.nupkg
 
   publish-nuget:
@@ -40,7 +41,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: package
+        name: build-artifact
 
     - name: Publish
       run: |
