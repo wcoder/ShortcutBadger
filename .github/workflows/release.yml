@@ -2,6 +2,7 @@ name: Release NuGet
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   build:
