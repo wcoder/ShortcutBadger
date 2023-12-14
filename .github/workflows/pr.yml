@@ -1,0 +1,33 @@
+name: Build Solution
+
+on:
+  push:
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+    - 'README.md'
+
+jobs:
+  build:
+    name: Build
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        global-json-file: global.json
+
+    - name: Install .NET Workloads
+      run: dotnet workload install android
+
+    - name: Install NuGet dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Debug --no-restore --verbosity detailed
+
+    # - name: Test
+    #   run: dotnet test --no-restore --verbosity normal

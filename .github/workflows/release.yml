@@ -1,0 +1,49 @@
+name: Release NuGet
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        global-json-file: global.json
+
+    - name: Install .NET Workloads
+      run: dotnet workload install android
+
+    - name: Install NuGet dependencies
+      run: dotnet restore
+
+    - name: Pack
+      run: dotnet pack --configuration Release --no-restore --output . --verbosity detailed
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifact
+        path: Xamarin.ShortcutBadger.*.nupkg
+
+  publish-nuget:
+    name: Publish to NuGet.org
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: build-artifact
+
+    - name: Publish
+      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+
+    # - name: Create Release
+    #   run:
