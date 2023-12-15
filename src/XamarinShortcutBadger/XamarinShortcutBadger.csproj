@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-android</TargetFramework>
+    <TargetFramework>net8.0-android34.0</TargetFramework>
     <SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
 
     <!-- Assembly & NuGet Info -->
     <Title>Shortcut Badger for Xamarin.Android and .NET for Android</Title>
     <Description>The ShortcutBadger makes your Android App show the count of unread messages as a badge on your App shortcut.</Description>
-    <Version>1.1.21.60</Version>
+    <Version>1.1.21.80</Version>
     <Authors>Leo Lin, Yauheni Pakala</Authors>
     <Owners>Yauheni Pakala</Owners>
     <PackageId>Xamarin.ShortcutBadger</PackageId>
