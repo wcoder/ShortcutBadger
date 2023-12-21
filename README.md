@@ -2,7 +2,7 @@
 
 # ShortcutBadger
 
-![version](http://img.shields.io/badge/original-v1.1.21-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.ShortcutBadger)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/) [![Build](https://github.com/wcoder/ShortcutBadger/actions/workflows/pr.yml/badge.svg?branch=master)](https://github.com/wcoder/ShortcutBadger/actions/workflows/pr.yml)
+![original version](http://img.shields.io/badge/original-v1.1.22-brightgreen.svg?style=flat) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.ShortcutBadger)](https://www.nuget.org/packages/Xamarin.ShortcutBadger/) [![Build](https://github.com/wcoder/ShortcutBadger/actions/workflows/pr.yml/badge.svg?branch=master)](https://github.com/wcoder/ShortcutBadger/actions/workflows/pr.yml)
 
 Port of [ShortcutBadger](https://github.com/leolin310148/ShortcutBadger) for Xamarin.Android
 
@@ -14,26 +14,26 @@ The ShortcutBadger makes your Android App show the count of unread messages as a
 
 NuGet
 
-```
+```sh
 Install-Package Xamarin.ShortcutBadger
 ```
 
 Add the codes below:
 
-```csharp
+```cs
 int badgeCount = 1;
 ShortcutBadger.ApplyCount(context, badgeCount);
 ```
 
 If you want to remove the badge:
 
-```csharp
+```cs
 ShortcutBadger.RemoveCount(context);
 ```
 
 or
 
-```csharp
+```cs
 ShortcutBadger.ApplyCount(context, 0);
 ```
 
@@ -143,6 +143,13 @@ ShortcutBadger.ApplyCount(context, 0);
             <br>
             <img src="https://raw.github.com/leolin310148/ShortcutBadger/master/screenshots/ss_launchtime.png"/>
         </td>
+        <td width="260" colspan="2">
+            <h3>Yandex Launcher</h3>
+            <br>
+            <img src="https://raw.github.com/leolin310148/ShortcutBadger/master/screenshots/ss_yandex.png"/>
+            <br>
+            (1.1.23+)
+        </td>
     </tr>
 </table>
 
@@ -174,6 +181,10 @@ If you receive a message from Google containing something like this:
 please use version 1.1.0+!
 
 ## CHANGE LOG
+
+1.1.22:
+
+* Improve Oreo support (Thanks to [AlexStarc](https://github.com/AlexStarc))
 
 1.1.21:
 
